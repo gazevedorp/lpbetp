@@ -34,7 +34,7 @@ export default function AboutTrainer() {
         >
           <div className="relative overflow-hidden rounded-lg shadow-xl">
             <Image
-              src="/personal.jpg" // Substitua pela imagem real da personal trainer
+              src="/personal-logo.jpg" // Substitua pela imagem real da personal trainer
               alt="Personal Trainer"
               width={600}
               height={600}
