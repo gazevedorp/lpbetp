@@ -12,11 +12,6 @@ body {
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url('/fundo-3.jpg');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -57,7 +52,7 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  /* width: 10px; */
 }
 
 /* Track */

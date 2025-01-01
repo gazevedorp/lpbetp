@@ -27,7 +27,7 @@ export default function Home() {
 
         {/* Seção com o conteúdo que antes estava em AboutTrainer */}
         {/* <TrainerDetailsSection /> */}
-        <VideoSection />
+        {/* <VideoSection /> */}
 
         {/* Outras seções adaptadas ao novo layout */}
         {/* <Plans />
