@@ -1,42 +1,53 @@
-import { motion } from 'framer-motion'
 import React from 'react'
 
 export default function VideoSection() {
   return (
-    <motion.section
+    <section
       id="video"
-      className="relative py-16 bg-accent text-white overflow-hidden"
-      // Animação de entrada suave
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+      className="snap-start relative py-16 text-white overflow-hidden h-[100vh]"
     >
-      {/* Background decorativo (opcional) */}
-      <div
-        className="absolute inset-0 -z-10 bg-no-repeat bg-center bg-cover opacity-10"
-        style={{ backgroundImage: 'url("/video-bg-pattern.jpg")' }}
-      ></div>
 
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold font-sora mb-6">
-          Veja Como Podemos Ajudar Você
-        </h2>
-        <p className="max-w-2xl mx-auto text-sm md:text-base opacity-90 mb-10 leading-relaxed">
-          Conheça mais sobre nossa proposta de consultoria 
-          e todos os benefícios que você terá ao se juntar a nós.
-        </p>
+      <div className="container mx-auto px-4">
+        <div className="
+          flex
+          flex-col-reverse
+          md:flex-row
+          items-center
+          justify-center
+          gap-8
+        ">
+          {/* Vídeo à esquerda (em md) */}
+          <div className="flex-1 w-full">
+            <div
+              className="
+                relative
+                h-0
+                pb-[177.78%]     /* Proporção vertical em telas pequenas */
+                md:pb-[56.25%]   /* Proporção 16:9 em telas md ou maiores */
+                overflow-hidden
+                rounded-lg
+                shadow-lg
+                mx-auto
+                max-w-full
+              "
+            >
+              <iframe
+                src="https://player.vimeo.com/video/1042928972?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                title="Vídeo de Apresentação"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full rounded-lg"
+              ></iframe>
+            </div>
+          </div>
 
-        {/* Container responsivo para o vídeo (Aspect Ratio 16:9) */}
-        <div className="relative w-full h-0 pb-[56.25%] overflow-hidden rounded-lg shadow-lg mx-auto">
-          <iframe
-            src="https://www.youtube.com/embed/placeholder-video-id"
-            title="Vídeo de Apresentação"
-            allowFullScreen
-            className="absolute top-0 left-0 w-full h-full rounded-lg"
-          ></iframe>
+          {/* Texto à direita (em md) */}
+          <div className="flex-1 w-full text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold font-sora mb-6">
+              Veja Como Podemos Ajudar Você
+            </h2>
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

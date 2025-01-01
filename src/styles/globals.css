@@ -12,6 +12,11 @@ body {
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/fundo-3.jpg');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,15 +56,23 @@ button {
   color: #4a405f;
 }
 
-/* Estilo para o Header */
-header {
-  background-color: transparent;
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-header nav a {
-  transition: color 0.3s;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #313131;
+  border-radius: 0px;
 }
 
-header nav a:hover {
-  color: #f9ab2d;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #010300;
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #313131;
 }
