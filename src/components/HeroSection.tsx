@@ -85,6 +85,7 @@ export default function HeroSection() {
                   autoStart: true,
                   loop: false,
                   delay: 50,
+                  //@ts-expect-error type later
                   escapeHTML: false, // permite renderizar HTML
                 }}
               />
