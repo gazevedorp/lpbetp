@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+/* 1) Importe a lib TypewriterEffect */
+import Typewriter from "typewriter-effect";
 
 export default function HeroSection() {
   return (
@@ -13,23 +15,22 @@ export default function HeroSection() {
         justify-center
         py-16
         px-4
-        bg-no-repeat      /* não repete a imagem */
-        bg-center         /* centraliza a imagem de fundo */
-        bg-cover          /* cobre toda a tela */
-        relative         /* necessário para posicionar o conteúdo absoluto */
+        bg-no-repeat
+        bg-center
+        bg-cover
+        relative
       "
       style={{ backgroundImage: "url('/fundo-3.jpg')" }}
     >
       {/* Contêiner relativo para posicionar o personal-logo atrás do texto */}
       <div className="absolute w-full h-full flex flex-col items-center justify-center">
-        {/* Imagem personal-logo.jpg no fundo, ocupando todo o container */}
+        {/* Imagem personal-logo no fundo, ocupando todo o container */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Image
             src="/personal-logo-2.png"
             alt="Foto da Personal"
             className="sm:object-contain object-cover"
-            fill /* Faz a imagem preencher a área do pai */
-            /* ou 'cover', dependendo do efeito desejado */
+            fill
           />
         </div>
 
@@ -45,8 +46,22 @@ export default function HeroSection() {
           />
 
           <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-white">
-            Conquista, superação e <text className="text-primary">liberdade</text>
+            {/* 2) Invoque o TypewriterEffect aqui */}
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Conquista, superação e liberdade")
+                  .start();
+              }}
+              options={{
+                autoStart: true,
+                loop: false,
+                delay: 80,   // velocidade da digitação (ms)
+                // cursor: "", // se quiser remover o cursor piscando, descomente
+              }}
+            />
           </h2>
+
           <p className="text-sm w-[95%] sm:w-[60%] lg:text-base text-white mb-4 leading-relaxed">
             Treinos feitos sob medida para você, com acompanhamentos focados em
             resultados, de maneira descomplicada e direta.
