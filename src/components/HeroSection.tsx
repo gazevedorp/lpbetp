@@ -1,6 +1,7 @@
+"use client"; // se estiver usando Next.js 13 dentro de 'app'
+
 import React from "react";
 import Image from "next/image";
-/* 1) Importe a lib TypewriterEffect */
 import Typewriter from "typewriter-effect";
 
 export default function HeroSection() {
@@ -35,7 +36,20 @@ export default function HeroSection() {
         </div>
 
         {/* Conteúdo (texto + CTA) na frente (z-index maior) */}
-        <div className="z-10 w-[90%] rounded-xl flex flex-col items-center justify-center py-8 text-center bg-[rgb(0,0,0)]/50">
+        <div
+          className="
+            z-10 
+            w-[90%]
+            rounded-xl
+            flex
+            flex-col
+            items-center
+            justify-center
+            py-8
+            text-center
+            bg-[rgb(0,0,0)]/50
+          "
+        >
           {/* Logo */}
           <Image
             src="/logo-2.svg"
@@ -45,22 +59,37 @@ export default function HeroSection() {
             className="mb-4 -mt-32 -mr-8"
           />
 
-          <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-white">
-            {/* 2) Invoque o TypewriterEffect aqui */}
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("Conquista, superação e liberdade")
-                  .start();
-              }}
-              options={{
-                autoStart: true,
-                loop: false,
-                delay: 80,   // velocidade da digitação (ms)
-                // cursor: "", // se quiser remover o cursor piscando, descomente
-              }}
-            />
-          </h2>
+          {/* 1) Contêiner que define largura fixa em caracteres */}
+          <div
+            className="
+              max-w-[36ch]  /* Limita a largura a ~36 caracteres */
+              w-full
+              mx-auto
+            "
+            style={{
+              minHeight: "2.5em", // espaço vertical mínimo p/ evitar 'pulo'
+              whiteSpace: "nowrap" // mantém tudo em uma única linha
+            }}
+          >
+            <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-white">
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    // 2) Insira o HTML com a cor para 'liberdade'
+                    .typeString(
+                      'Conquista, superação e <span class="text-primary">liberdade</span>'
+                    )
+                    .start();
+                }}
+                options={{
+                  autoStart: true,
+                  loop: false,
+                  delay: 50,
+                  escapeHTML: false, // permite renderizar HTML
+                }}
+              />
+            </h2>
+          </div>
 
           <p className="text-sm w-[95%] sm:w-[60%] lg:text-base text-white mb-4 leading-relaxed">
             Treinos feitos sob medida para você, com acompanhamentos focados em
