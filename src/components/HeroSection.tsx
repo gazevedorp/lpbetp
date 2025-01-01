@@ -61,17 +61,14 @@ export default function HeroSection() {
 
           {/* 1) Contêiner que define largura fixa em caracteres */}
           <div
-            className="
-              max-w-[36ch]  /* Limita a largura a ~36 caracteres */
+            className="*/
               w-full
               mx-auto
+              min-h-[5em]
+              sm:min-h-0
             "
-            style={{
-              minHeight: "2.5em", // espaço vertical mínimo p/ evitar 'pulo'
-              whiteSpace: "nowrap" // mantém tudo em uma única linha
-            }}
           >
-            <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-white">
+            <h2 className="text-3xl font-bold mb-2 text-white">
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
