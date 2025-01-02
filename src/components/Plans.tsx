@@ -102,7 +102,7 @@ export default function PlansCarousel() {
         </h2>
 
         <Slider {...settings}>
-          {plansData.map((plan, index) => (
+          {plansData.reverse().map((plan, index) => (
             <div key={index} className="px-2">
               <div
                 className={`
