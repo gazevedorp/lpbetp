@@ -68,7 +68,7 @@ export default function HeroSection() {
               sm:min-h-0
             "
           >
-            <h2 className="text-3xl font-bold mb-2 text-white">
+            <h2 className="text-2xl w-[95%] font-bold mb-2 text-white">
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
