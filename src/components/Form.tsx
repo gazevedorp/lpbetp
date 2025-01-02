@@ -47,13 +47,9 @@ export default function Form() {
   }
 
   return (
-    <motion.section
+    <section
       id="form"
       className="snap-start py-16 px-4 bg-[#1a1b1c] text-white"
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
     >
       {/* Texto principal em 3xl */}
       <h2 className="text-xl font-light font-sora text-center max-w-3xl mx-auto leading-tight mb-8">
@@ -259,6 +255,6 @@ export default function Form() {
           </div>
         </form>
       </div>
-    </motion.section>
+    </section>
   )
 }

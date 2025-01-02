@@ -23,7 +23,7 @@ export default function Home() {
         />
         <link rel="shortcut icon" href="logo.svg"></link>
       </Head>
-      <main className="overflow-y-scroll overflow-x-hidden h-screen w-screen ">
+      <main className="overflow-y-scroll overflow-x-hidden h-screen w-screen scroll-smooth">
         <HeroSection />
 
         {/* <TrainerDetailsSection />

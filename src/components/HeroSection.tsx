@@ -95,7 +95,7 @@ export default function HeroSection() {
           </p>
 
           <a
-            href="#form"
+            href="#plans"
             className="
               inline-block
               bg-primary
