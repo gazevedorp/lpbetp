@@ -31,7 +31,7 @@ export default async function handler(
     // Enviar email para o dono do site
     const data = await resend.emails.send({
       from: "Seu Site <software@innovaihub.com.br>",
-      to: ["gabrieldma27@gmail.com"], // troque aqui para o e-mail real do dono
+      to: ["betania.adrianavieira7@gmail.com"], // troque aqui para o e-mail real do dono
       subject: "Nova Anamnese Recebida",
       // Montamos o template React que receberá os dados e exibirá em um layout amigável
       react: EmailTemplate({
