@@ -41,7 +41,7 @@ export default function Steps() {
       />
 
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-sora text-center mb-12 font-bold text-white">
+        <h2 className="text-2xl sm:text-3xl font-sora text-center mb-12 font-bold text-white">
           Como são as etapas da minha Consultoria?
         </h2>
 

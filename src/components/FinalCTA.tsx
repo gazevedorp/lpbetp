@@ -7,7 +7,7 @@ export default function FinalCTA() {
       id="final-cta"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold font-sora mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold font-sora mb-4">
           A Transformação Começa Agora!
         </h2>
         <p className="max-w-xl mx-auto font-extralight sm:text-md mb-8">

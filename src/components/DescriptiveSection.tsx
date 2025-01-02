@@ -27,7 +27,7 @@ export default function DescriptiveSection() {
         {/* Seção 1: Introdução */}
         <div className="space-y-12">
           {/* Título centralizado */}
-          <h2 className="text-center text-3xl font-bold font-sora leading-tight">
+          <h2 className="text-center text-2xl sm:text-3xl font-bold font-sora leading-tight">
             A minha Consultoria <br className="hidden sm:block" />
             <span className="text-primary">serve para iniciantes?</span>
           </h2>
@@ -77,14 +77,14 @@ export default function DescriptiveSection() {
 
         {/* Seção 2: Relatos Comuns (com layout criativo) */}
         <div className="relative bg-[#262728] p-8 rounded-xl shadow-lg space-y-8">
-          <h3 className="text-3xl font-bold text-center font-sora mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center font-sora mb-8">
             Relatos Comuns
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             {/* Coluna de Mulheres */}
             <div>
-              <h4 className="text-2xl font-semibold mb-6 border-b border-gray-500 pb-2 inline-block">
+              <h4 className="text-xl sm:text-2xl font-semibold mb-6 border-b border-gray-500 pb-2 inline-block">
                 Mulheres
               </h4>
               <div className="space-y-6 text-base leading-relaxed">
@@ -114,7 +114,7 @@ export default function DescriptiveSection() {
 
             {/* Coluna de Homens */}
             <div>
-              <h4 className="text-2xl font-semibold mb-6 border-b border-gray-500 pb-2 inline-block">
+              <h4 className="text-xl sm:text-2xl font-semibold mb-6 border-b border-gray-500 pb-2 inline-block">
                 Homens
               </h4>
               <div className="space-y-6 text-base leading-relaxed">
@@ -142,7 +142,7 @@ export default function DescriptiveSection() {
 
         {/* Seção 3: Você precisa de uma treinadora... */}
         <div className="relative space-y-8 max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-center font-sora mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center font-sora mb-8">
             Você precisa de uma treinadora que domine
           </h3>
           <p className="text-lg leading-relaxed">

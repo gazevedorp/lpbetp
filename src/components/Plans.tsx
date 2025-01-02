@@ -96,7 +96,7 @@ export default function PlansCarousel() {
       style={{ backgroundImage: "url('/fundo-8.jpg')" }}
     >
       <div className="container mx-auto px-4" style={{ overflow: "visible" }}>
-        <h2 className="text-3xl font-bold font-sora mb-12 text-white">
+        <h2 className="text-2xl sm:text-3xl font-bold font-sora mb-12 text-white">
           Escolha o Seu Plano
         </h2>
 
@@ -111,7 +111,7 @@ export default function PlansCarousel() {
                 `}
               >
                 <div className="">
-                  <h3 className="text-2xl sm:text-3xl font-semibold mb-4 rw">
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 rw">
                     {plan.title}{" "}
                     {plan.extra && (
                       <span className="block text-sm text-primary mt-1">
@@ -133,7 +133,7 @@ export default function PlansCarousel() {
                       <div className="text-lg font-bold text-test mb-2 line-through">
                         {`${plan.price}`}
                       </div>
-                      <div className="text-3xl font-bold text-primary mb-2">
+                      <div className="text-2xl font-bold text-primary mb-2">
                         {`${plan.promoPrice}`}
                       </div>
                     </>
@@ -145,7 +145,7 @@ export default function PlansCarousel() {
 
                 {/* Botão que envia mensagem no WhatsApp */}
                 <a
-                  href={`https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+participar+da_consultoria+com+o+${encodeURIComponent(
+                  href={`https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+participar+da+consultoria+com+o+${encodeURIComponent(
                     plan.title
                   )}`}
                   target="_blank"
