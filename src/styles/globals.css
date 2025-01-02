@@ -72,10 +72,10 @@ button {
   background: #313131;
 }
 
-.slick-dots li button:before {
-  color: #a36d15; /* Cor principal dos dots */
-  font-size: 12px;
+.custom-dots.slick-dots li button:before {
+  font-size: 10px !important;
+  color: #f9ab2d !important;
 }
-.slick-dots li.slick-active button:before {
-  color: #f5f5f5; /* Cor do dot ativo */
+.custom-dots.slick-dots li.slick-active button:before {
+  color: #ffffff !important;
 }

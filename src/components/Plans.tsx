@@ -59,13 +59,14 @@ export default function PlansCarousel() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 300,
+    speed: 250,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
+    dotsClass: "slick-dots custom-dots", // <-- adicione isso
     responsive: [
       {
         breakpoint: 1024,
