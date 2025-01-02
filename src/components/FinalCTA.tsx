@@ -8,7 +8,7 @@ export default function FinalCTA() {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl font-bold font-sora mb-4">
-          A Transformação Começa Agora!
+          A Transformação começa Agora!
         </h2>
         <p className="max-w-xl mx-auto font-extralight sm:text-md mb-8">
           Não adie seus objetivos. Escolha seu plano e comece a conquistar a mudança que você merece.

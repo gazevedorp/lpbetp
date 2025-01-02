@@ -8,7 +8,7 @@ export default function CTA() {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl font-bold font-sora mb-4">
-          Pronto para Começar?
+          Pronto para começar?
         </h2>
         <p className="max-w-xl mx-auto font-extralight sm:text-md mb-8">
           Escolha o plano ideal para você e dê o primeiro passo na sua
