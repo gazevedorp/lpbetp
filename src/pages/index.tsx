@@ -9,6 +9,7 @@ import DescriptiveSection from '@/components/DescriptiveSection'
 import Head from 'next/head'
 import VideoSection from '@/components/VideoSection'
 import Footer from '@/components/Footer'
+import FinalCTA from '@/components/FinalCTA'
 
 // Exemplo de página principal
 export default function Home() {
@@ -33,7 +34,7 @@ export default function Home() {
         <DescriptiveSection />
         <Plans />
         <Form />
-        <CTA />
+        <FinalCTA />
         <Footer />
       </main>
     </>

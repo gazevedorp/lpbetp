@@ -56,15 +56,15 @@ export default function Form() {
       viewport={{ once: true }}
     >
       {/* Texto principal em 3xl */}
-      <h2 className="text-2xl font-bold font-sora text-center max-w-3xl mx-auto leading-tight mb-8">
+      <h2 className="text-xl font-light font-sora text-center max-w-3xl mx-auto leading-tight mb-8">
         Se você ainda não tem certeza de suas necessidades, preencha a anamnese
         e logo entraremos em contato com você.
       </h2>
 
       {/* Container do formulário */}
       <div className="max-w-4xl mx-auto p-8 rounded-xl backdrop-blur-md shadow-xl bg-[#141414] text-white">
-        <h3 className="text-2xl font-bold text-center mb-6 font-sora">
-          Preencha a Anamnese
+        <h3 className="text-xl font-bold text-center mb-6 font-sora">
+          Forumulário de Anamnese
         </h3>
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -106,8 +106,8 @@ py-16 snap-start text-center
               <div
                 className={`
                   relative flex flex-col items-center justify-between
-                  h-[540px] w-full max-w-[300px] mx-auto
-                  rounded-lg shadow-lg bg-black/60 text-white p-6
+                  h-[540px] w-full max-w-[340px] mx-auto
+                  rounded-lg shadow-lg bg-black/70 text-white p-6
                 `}
               >
                 <div className="">
