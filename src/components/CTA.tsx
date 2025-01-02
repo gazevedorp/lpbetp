@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function CTA() {
   return (
@@ -11,16 +11,17 @@ export default function CTA() {
           Pronto para Começar?
         </h2>
         <p className="max-w-xl mx-auto font-extralight sm:text-md mb-8">
-          Escolha o plano ideal para você e dê o primeiro passo na sua transformação, agora mesmo!
+          Escolha o plano ideal para você e dê o primeiro passo na sua
+          transformação, agora mesmo!
         </p>
 
         <a
           href="#plans"
-          className="inline-block bg-white text-[#62481F] py-3 px-6 rounded-lg shadow-lg  font-semibold"
+          className="inline-block bg-white text-primary py-3 px-6 rounded-lg shadow-lg font-semibold"
         >
-          Ver Planos
+          Escolher Meu Plano
         </a>
       </div>
     </section>
-  )
+  );
 }

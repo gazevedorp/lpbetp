@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 export default function DescriptiveSection() {
   return (
@@ -26,25 +26,55 @@ export default function DescriptiveSection() {
       <div className="relative max-w-7xl mx-auto px-6 py-24 space-y-24">
         {/* Seção 1: Introdução */}
         <div className="space-y-12">
+          {/* Título centralizado */}
           <h2 className="text-center text-3xl font-bold font-sora leading-tight">
             A minha Consultoria <br className="hidden sm:block" />
             <span className="text-primary">serve para iniciantes?</span>
           </h2>
 
-          <div className="text-center max-w-3xl mx-auto space-y-6 text-lg leading-relaxed">
-            <p>
-              Com certeza! Você será muito bem-vindo(a) aqui. Comigo, vai
-              aprender a treinar de verdade e da forma correta desde o começo,
-              minimizando erros e aproveitando ao máximo o seu potencial.
-            </p>
-            <p>
-              Meu método de treinamento foi desenvolvido para atender qualquer
-              pessoa, independentemente do nível de experiência ou capacidade
-              física. Cuidarei de todos os detalhes para que você não se sinta
-              perdido(a) na academia e saiba exatamente o que fazer.
-            </p>
+          {/* Seção em duas colunas (texto à esquerda, vídeo vertical à direita) */}
+          <div className="flex flex-col sm:flex-row justify-center items-start">
+            {/* Texto à esquerda, alinhado à esquerda */}
+            <div className="border-l border-primary pl-2 space-y-6 text-left text-lg leading-relaxed w-full sm:w-[520px] mb-16 sm:mb-0">
+              <p>
+                Com certeza! Você será muito bem-vindo(a) aqui. Comigo, vai
+                aprender a treinar de verdade e da forma correta desde o começo,
+                minimizando erros e aproveitando ao máximo o seu potencial.
+              </p>
+              <p>
+                Meu método de treinamento foi desenvolvido para atender qualquer
+                pessoa, independentemente do nível de experiência ou capacidade
+                física. Cuidarei de todos os detalhes para que você não se sinta
+                perdido(a) na academia e saiba exatamente o que fazer.
+              </p>
+            </div>
+
+            {/* Contêiner para vídeo vertical à direita */}
+            <div className="w-full sm:w-[200px] sm:ml-16">
+              <div
+                className="
+          relative
+          w-[100%]            /* Em telas pequenas, 90% de largura */
+          md:w-[180px]       /* Em telas médias/maiores, largura fixa de 400px */
+          aspect-[9/16]      /* Proporção vertical (9:16) */
+          bg-gradient-to-br 
+          from-[#2a2b2c] to-[#3b3c3d]
+          p-3 sm:p-4
+          rounded-xl 
+          shadow-2xl
+        "
+              >
+                <iframe
+                  src="https://player.vimeo.com/video/1042928972?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                  title="Vídeo de Apresentação"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
+
         {/* Seção 2: Relatos Comuns (com layout criativo) */}
         <div className="relative bg-[#262728] p-8 rounded-xl shadow-lg space-y-8">
           <h3 className="text-3xl font-bold text-center font-sora mb-8">
@@ -59,8 +89,8 @@ export default function DescriptiveSection() {
               </h4>
               <div className="space-y-6 text-base leading-relaxed">
                 <blockquote className="border-l-4 border-primary pl-4 italic">
-                  “Meu glúteo não cresce e não define, só consigo desenvolver
-                  as pernas.”
+                  “Meu glúteo não cresce e não define, só consigo desenvolver as
+                  pernas.”
                 </blockquote>
                 <blockquote className="border-l-4 border-primary pl-4 italic">
                   “Sinto dores na lombar em exercícios como stiff e
@@ -117,8 +147,8 @@ export default function DescriptiveSection() {
           </h3>
           <p className="text-lg leading-relaxed">
             Se você se identificou com algum dos relatos acima, posso te ajudar.
-            Meu treinamento é fundamentado na ciência do movimento, proporcionando
-            um desenvolvimento sólido, seguro e contínuo.
+            Meu treinamento é fundamentado na ciência do movimento,
+            proporcionando um desenvolvimento sólido, seguro e contínuo.
           </p>
 
           <ul className="space-y-4 text-base leading-relaxed">
@@ -129,15 +159,15 @@ export default function DescriptiveSection() {
             <li className="flex items-start gap-2">
               <span className="mt-[6px] block w-2 h-2 rounded-full bg-primary"></span>
               <p>
-                Avaliações físicas e funcionais para criar treinos
-                completamente personalizados.
+                Avaliações físicas e funcionais para criar treinos completamente
+                personalizados.
               </p>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-[6px] block w-2 h-2 rounded-full bg-primary"></span>
               <p>
-                Periodização adequada de treino para resultados progressivos
-                e sustentáveis.
+                Periodização adequada de treino para resultados progressivos e
+                sustentáveis.
               </p>
             </li>
           </ul>

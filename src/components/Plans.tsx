@@ -86,13 +86,13 @@ export default function PlansCarousel() {
     <section
       id="plans"
       className="
-py-16 snap-start text-center
-      px-4
-      bg-no-repeat
-      bg-center
-      bg-cover
-      relative
-    "
+        py-16 snap-start text-center
+        px-4
+        bg-no-repeat
+        bg-center
+        bg-cover
+        relative
+      "
       style={{ backgroundImage: "url('/fundo-8.jpg')" }}
     >
       <div className="container mx-auto px-4" style={{ overflow: "visible" }}>
@@ -143,8 +143,13 @@ py-16 snap-start text-center
                   )}
                 </div>
 
+                {/* Botão que envia mensagem no WhatsApp */}
                 <a
-                  href="#form"
+                  href={`https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+participar+do+${encodeURIComponent(
+                    plan.title
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block w-full bg-transparent border border-primary text-primary py-3 px-6 rounded-lg font-semibold shadow-md 
                             hover:shadow-lg hover:bg-primary-dark transition-all duration-300 mt-4"
                 >
