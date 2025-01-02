@@ -145,7 +145,7 @@ export default function PlansCarousel() {
 
                 {/* Botão que envia mensagem no WhatsApp */}
                 <a
-                  href={`https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+participar+do+${encodeURIComponent(
+                  href={`https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+participar+da_consultoria+com+o+${encodeURIComponent(
                     plan.title
                   )}`}
                   target="_blank"

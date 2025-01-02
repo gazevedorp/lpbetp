@@ -35,7 +35,7 @@ export default function DescriptiveSection() {
           {/* Seção em duas colunas (texto à esquerda, vídeo vertical à direita) */}
           <div className="flex flex-col sm:flex-row justify-center items-start">
             {/* Texto à esquerda, alinhado à esquerda */}
-            <div className="border-l border-primary pl-2 space-y-6 text-left text-lg leading-relaxed w-full sm:w-[520px] mb-16 sm:mb-0">
+            <div className="border-l-4 border-primary pl-2 space-y-6 text-left text-lg leading-relaxed w-full sm:w-[520px] mb-16 sm:mb-0">
               <p>
                 Com certeza! Você será muito bem-vindo(a) aqui. Comigo, vai
                 aprender a treinar de verdade e da forma correta desde o começo,
@@ -55,7 +55,7 @@ export default function DescriptiveSection() {
                 className="
           relative
           w-[100%]            /* Em telas pequenas, 90% de largura */
-          md:w-[180px]       /* Em telas médias/maiores, largura fixa de 400px */
+          md:w-[200px]       /* Em telas médias/maiores, largura fixa de 400px */
           aspect-[9/16]      /* Proporção vertical (9:16) */
           bg-gradient-to-br 
           from-[#2a2b2c] to-[#3b3c3d]
