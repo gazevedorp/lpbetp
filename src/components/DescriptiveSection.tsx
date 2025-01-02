@@ -23,7 +23,7 @@ export default function DescriptiveSection() {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="relative max-w-7xl mx-auto px-6 py-24 space-y-24">
+      <div className="relative max-w-7xl mx-auto px-6 py-16 space-y-16">
         {/* Seção 1: Introdução */}
         <div className="space-y-12">
           {/* Título centralizado */}

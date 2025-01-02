@@ -237,7 +237,7 @@ export default function Form() {
           <div className="md:col-span-2 text-center mt-4">
             <motion.button
               type="submit"
-              className="inline-block bg-primary text-white py-3 px-6 rounded-lg font-semibold 
+              className="w-[210px] inline-block bg-primary text-white py-3 px-6 rounded-lg font-semibold 
                          transition duration-300 disabled:opacity-50"
               whileTap={{ scale: 0.97 }}
               disabled={loading}
