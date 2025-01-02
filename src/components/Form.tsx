@@ -1,48 +1,48 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Form() {
-  const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setLoading(true)
-    setSuccess(false)
-    setError(null)
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    setError(null);
 
     // Capturando os dados de cada campo
-    const formData = new FormData(e.currentTarget)
+    const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      age: formData.get('age') as string,
-      goals: formData.get('goals') as string,
-      injuries: formData.get('injuries') as string,
-      activityLevel: formData.get('activity-level') as string,
-      // Pergunta removida: heartRate
-      responseToExercise: formData.getAll('response-to-exercise'),
-      hasConsent: formData.get('hasConsent') === 'on',
-    }
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      age: formData.get("age") as string,
+      goals: formData.get("goals") as string,
+      injuries: formData.get("injuries") as string,
+      activityLevel: formData.get("activity-level") as string,
+      responseToExercise: formData.getAll("response-to-exercise"),
+    };
 
     try {
-      const res = await fetch('/api/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
-      })
+      });
 
       if (!res.ok) {
-        throw new Error('Erro ao enviar formulário.')
+        throw new Error("Erro ao enviar formulário.");
       }
 
-      setSuccess(true)
-      e.currentTarget.reset() // limpa o formulário
+      setSuccess(true);
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 2000);
     } catch (err: any) {
-      setError(err.message || 'Ocorreu um erro inesperado.')
+      setError(err.message || "Ocorreu um erro inesperado.");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   }
 
@@ -60,10 +60,13 @@ export default function Form() {
       {/* Container do formulário */}
       <div className="max-w-4xl mx-auto p-8 rounded-xl backdrop-blur-md shadow-xl bg-[#141414] text-white">
         <h3 className="text-xl font-bold text-center mb-6 font-sora">
-          Forumulário de Anamnese
+          Formulário de Anamnese
         </h3>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {/* Coluna Esquerda */}
           <div className="space-y-6">
             {/* Nome Completo */}
@@ -173,11 +176,11 @@ export default function Form() {
                 required
               >
                 <option value="">Selecione um nível</option>
-                <option value="sedentary">Sedentário (0x/semana)</option>
-                <option value="light">Leve (1-2x/semana)</option>
-                <option value="moderate">Moderado (3-4x/semana)</option>
-                <option value="active">Ativo (5+ vezes/semana)</option>
-                <option value="very-active">Muito Ativo (diário)</option>
+                <option value="sedentário">Sedentário (0x/semana)</option>
+                <option value="leve">Leve (1-2x/semana)</option>
+                <option value="moderado">Moderado (3-4x/semana)</option>
+                <option value="ativo">Ativo (5+ vezes/semana)</option>
+                <option value="muito-ativo">Muito Ativo (diário)</option>
               </select>
             </div>
 
@@ -239,22 +242,22 @@ export default function Form() {
               whileTap={{ scale: 0.97 }}
               disabled={loading}
             >
-              {loading ? 'Enviando...' : 'Enviar'}
+              {loading ? "Enviando..." : "Enviar"}
             </motion.button>
 
             {success && (
               <p className="mt-4 text-green-500 font-semibold">
-                Formulário enviado com sucesso!
+                Formulário enviado com sucesso, obrigado!
               </p>
             )}
-            {error && (
+            {/* {error && (
               <p className="mt-4 text-red-500 font-semibold">
                 {error}
               </p>
-            )}
+            )} */}
           </div>
         </form>
       </div>
     </section>
-  )
+  );
 }
