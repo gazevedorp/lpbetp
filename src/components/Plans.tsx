@@ -96,13 +96,13 @@ py-16 snap-start text-center
       style={{ backgroundImage: "url('/fundo-8.jpg')" }}
     >
       <div className="container mx-auto px-4" style={{ overflow: "visible" }}>
-        <h2 className="text-4xl font-bold font-sora mb-12 text-white">
+        <h2 className="text-3xl font-bold font-sora mb-12 text-white">
           Escolha o Seu Plano
         </h2>
 
         <Slider {...settings}>
           {plansData.map((plan, index) => (
-            <div key={index} className="px-4">
+            <div key={index} className="px-2">
               <div
                 className={`
                   relative flex flex-col items-center justify-between
