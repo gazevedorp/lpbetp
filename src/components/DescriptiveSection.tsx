@@ -7,20 +7,6 @@ export default function DescriptiveSection() {
       id="descriptive"
       className="relative bg-[#1a1b1c] text-white overflow-hidden"
     >
-      {/* Wave superior */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
-        <svg
-          className="relative block w-[calc(120%+1.3px)] h-[150px]"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          viewBox="0 0 1200 120"
-        >
-          <path
-            d="M321.39,56.33c56.2,29.56,112.4,59.13,168.67,57.56,56.07-1.57,112.13-34.3,168.2-35.55,56.27-1.22,112.53,31.68,168.8,28.73,56.2-2.81,112.4-42.29,168.67-45.31,56.07-3,112.13,30.4,168.2,28.3,56.27-2.24,112.53-42.68,168.8-47.3C1299.18,37,1355.7,39,1411.49,41V120H0V95.99C38.58,76.25,94.74,26.77,151,26.19c56.27-.51,112.53,48.05,168.8,30.14Z"
-            fill="#1a1b1c"
-          />
-        </svg>
-      </div>
 
       {/* Conteúdo principal */}
       <div className="relative max-w-7xl mx-auto px-6 py-16 space-y-16">
