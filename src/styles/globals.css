@@ -71,3 +71,11 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #313131;
 }
+
+.slick-dots li button:before {
+  color: #a36d15; /* Cor principal dos dots */
+  font-size: 12px;
+}
+.slick-dots li.slick-active button:before {
+  color: #f5f5f5; /* Cor do dot ativo */
+}

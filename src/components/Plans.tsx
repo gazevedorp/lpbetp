@@ -1,127 +1,160 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
+//@ts-expect-error
+import Slider from "react-slick"; // Biblioteca para o carrossel
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-export default function Plans() {
-  // Se quiser, pode mover esse array para um arquivo de constantes
+export default function PlansCarousel() {
   const plansData = [
     {
-      title: 'Plano Platina 💎',
-      duration: '1 ano de acompanhamento',
-      protocols: '6 Protocolos de treino',
-      support: 'Suporte completo no WhatsApp exclusivo',
-      price: 'R$ 1.699,90',
-      discount: '20% de desconto no Pix ou até 12x',
-      extra: '',
+      title: "Plano Platina 💎",
+      duration: "1 ano de acompanhamento",
+      protocols: "6 Protocolos de treino",
+      support: "Suporte completo no WhatsApp exclusivo",
+      price: "R$ 1.699,90",
+      promoPrice: "R$ 1.359,90",
+      discount: "20% de desconto no Pix ou até 12x",
+      extra: "A melhor de todas!",
       bestSeller: false,
-      badge: '',
+      badge: "",
     },
     {
-      title: 'Plano Ouro 🏅',
-      duration: '6 meses de acompanhamento',
-      protocols: '3 Protocolos de treino',
-      support: 'Suporte completo no WhatsApp exclusivo',
-      price: 'R$ 889,90',
-      discount: '15% de desconto no Pix ou até 12x',
-      extra: 'Você ganha 1 mês de graça!',
+      title: "Plano Ouro 🏅",
+      duration: "6 meses de acompanhamento",
+      protocols: "3 Protocolos de treino",
+      support: "Suporte completo no WhatsApp exclusivo",
+      price: "R$ 889,90",
+      promoPrice: "R$ 755,90",
+      discount: "15% de desconto no Pix ou até 12x",
+      extra: "Você ganha 1 mês de graça!",
       bestSeller: false,
-      badge: '',
+      badge: "",
     },
     {
-      title: 'Plano Prata 🥈',
-      duration: '4 meses de acompanhamento',
-      protocols: '2 Protocolos de treino',
-      support: 'Suporte completo no WhatsApp exclusivo',
-      price: 'R$ 629,90',
-      discount: '10% de desconto no Pix ou até 12x',
-      extra: '(Mais Vendido)',
-      bestSeller: true, // vamos destacar esse plano
-      badge: 'Mais Vendido',
+      title: "Plano Prata 🥈",
+      duration: "4 meses de acompanhamento",
+      protocols: "2 Protocolos de treino",
+      support: "Suporte completo no WhatsApp exclusivo",
+      price: "R$ 629,90",
+      promoPrice: "R$ 566,90",
+      discount: "10% de desconto no Pix ou até 12x",
+      extra: "(Mais Vendido)",
+      bestSeller: true,
+      badge: "Mais Vendido",
     },
     {
-      title: 'Plano Bronze 🥉',
-      duration: '8 semanas de acompanhamento',
-      protocols: '1 Protocolo de treino',
-      support: 'Suporte completo no WhatsApp exclusivo',
-      price: 'R$ 349,90',
-      discount: '',
-      extra: '',
+      title: "Plano Bronze 🥉",
+      duration: "8 semanas de acompanhamento",
+      protocols: "1 Protocolo de treino",
+      support: "Suporte completo no WhatsApp exclusivo",
+      price: "R$ 349,90",
+      promoPrice: "R$ 314,90",
+      discount: "",
+      extra: "Simples mas eficiente!",
       bestSeller: false,
-      badge: '',
+      badge: "",
     },
-  ]
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <section
       id="plans"
-      className="py-16 mt-16 text-center bg-gradient-to-b from-accent to-secondary text-white"
+      className="
+py-16 snap-start text-center
+      px-4
+      bg-no-repeat
+      bg-center
+      bg-cover
+      relative
+    "
+      style={{ backgroundImage: "url('/fundo-8.jpg')" }}
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold font-sora mb-12">
+      <div className="container mx-auto px-4" style={{ overflow: "visible" }}>
+        <h2 className="text-4xl font-bold font-sora mb-12 text-white">
           Escolha o Seu Plano
         </h2>
 
-        {/* Grid responsiva para os planos */}
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <Slider {...settings}>
           {plansData.map((plan, index) => (
-            <motion.div
-              key={index}
-              className={`
-                relative flex flex-col items-center justify-between
-                rounded-lg shadow-lg bg-white text-secondary p-6
-                transition-transform duration-300 
-                hover:shadow-2xl hover:scale-105
-              `}
-              // Animação de aparição suave
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              {/* Se for o bestSeller, renderiza um “badge” no topo */}
-              {plan.bestSeller && (
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-sm font-semibold rounded-full shadow-lg">
-                  {plan.badge}
-                </div>
-              )}
-
-              <h3 className="text-2xl sm:text-3xl font-semibold mb-4">
-                {plan.title}{' '}
-                {plan.extra && (
-                  <span className="block text-sm text-primary mt-1">
-                    {plan.extra}
-                  </span>
-                )}
-              </h3>
-
-              <div className="mb-4 space-y-2 text-sm sm:text-base leading-relaxed">
-                <p>- {plan.duration}</p>
-                <p>- {plan.protocols}</p>
-                <p>- {plan.support}</p>
-              </div>
-
-              {/* Preço e desconto */}
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-4">
-                {`Investimento: ${plan.price}`}
-              </div>
-              {plan.discount && (
-                <p className="text-sm sm:text-base text-gray-700 mb-4">
-                  ({plan.discount})
-                </p>
-              )}
-
-              <motion.a
-                href="#form"
-                className="inline-block w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold text-lg shadow-md 
-                           hover:shadow-lg hover:bg-primary-dark transition-all duration-300"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+            <div key={index} className="px-4">
+              <div
+                className={`
+                  relative flex flex-col items-center justify-between
+                  h-[540px] w-full max-w-[300px] mx-auto
+                  rounded-lg shadow-lg bg-black/60 text-white p-6
+                `}
               >
-                Assine Agora
-              </motion.a>
-            </motion.div>
+                <div className="">
+                  <h3 className="text-2xl sm:text-3xl font-semibold mb-4 rw">
+                    {plan.title}{" "}
+                    {plan.extra && (
+                      <span className="block text-sm text-primary mt-1">
+                        {plan.extra}
+                      </span>
+                    )}
+                  </h3>
+                </div>
+                <div className="mb-4 space-y-2 text-white text-sm w-full">
+                  <p>- {plan.duration}</p>
+                  <p>- {plan.protocols}</p>
+                  <p>- {plan.support}</p>
+                </div>
+
+                {/* Preço e preço promocional */}
+                <div className="w-full text-center ">
+                  {plan.promoPrice && (
+                    <>
+                      <div className="text-lg font-bold text-test mb-2 line-through">
+                        {`${plan.price}`}
+                      </div>
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        {`${plan.promoPrice}`}
+                      </div>
+                    </>
+                  )}
+                  {plan.discount && (
+                    <p className="text-xs text-white">({plan.discount})</p>
+                  )}
+                </div>
+
+                <a
+                  href="#form"
+                  className="inline-block w-full bg-transparent border border-primary text-primary py-3 px-6 rounded-lg font-semibold shadow-md 
+                            hover:shadow-lg hover:bg-primary-dark transition-all duration-300 mt-4"
+                >
+                  Assine Agora
+                </a>
+              </div>
+            </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </section>
-  )
+  );
 }

@@ -54,9 +54,9 @@ export default function HeroSection() {
           <Image
             src="/logo-2.svg"
             alt="Logo"
-            width={200}
+            width={220}
             height={20}
-            className="mb-4 -mt-32 -mr-8"
+            className="mb-2 -mt-32 -mr-12"
           />
 
           {/* 1) Contêiner que define largura fixa em caracteres */}
@@ -68,7 +68,7 @@ export default function HeroSection() {
               sm:min-h-0
             "
           >
-            <h2 className="text-2xl w-[95%] font-bold mb-2 text-white">
+            <h2 className="text-2xl sm:text-3xl w-[95%] sm:w-full font-bold mb-2 text-white">
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
@@ -89,7 +89,7 @@ export default function HeroSection() {
             </h2>
           </div>
 
-          <p className="text-sm w-[95%] sm:w-[60%] lg:text-base text-white mb-4 leading-relaxed">
+          <p className="text-sm w-[95%] sm:w-[60%] lg:text-base text-white mb-4 font-extralight leading-relaxed">
             Treinos feitos sob medida para você, com acompanhamentos focados em
             resultados, de maneira descomplicada e direta.
           </p>

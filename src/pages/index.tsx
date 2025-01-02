@@ -8,6 +8,7 @@ import Form from '@/components/Form'
 import DescriptiveSection from '@/components/DescriptiveSection'
 import Head from 'next/head'
 import VideoSection from '@/components/VideoSection'
+import Footer from '@/components/Footer'
 
 // Exemplo de página principal
 export default function Home() {
@@ -21,20 +22,19 @@ export default function Home() {
         />
         <link rel="shortcut icon" href="logo.svg"></link>
       </Head>
-      <main className="snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen w-screen ">
-        {/* Seção Hero (nova) */}
+      <main className="overflow-y-scroll overflow-x-hidden h-screen w-screen ">
         <HeroSection />
 
-        {/* Seção com o conteúdo que antes estava em AboutTrainer */}
-        {/* <TrainerDetailsSection /> */}
-        {/* <VideoSection /> */}
+        {/* <TrainerDetailsSection />
+        <VideoSection /> */}
 
-        {/* Outras seções adaptadas ao novo layout */}
-        {/* <Plans />
         <Steps />
-        <DescriptiveSection />
         <CTA />
-        <Form /> */}
+        <DescriptiveSection />
+        <Plans />
+        <Form />
+        <CTA />
+        <Footer />
       </main>
     </>
   )

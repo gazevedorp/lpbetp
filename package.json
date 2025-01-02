@@ -22,7 +22,9 @@
     "react-lottie": "^1.2.10",
     "react-notion": "^0.10.0",
     "react-notion-x": "^7.2.5",
+    "react-slick": "^0.30.3",
     "resend": "^4.0.1",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.1.15",
     "typewriter-effect": "^2.21.0"
   },
