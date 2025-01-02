@@ -20,9 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     goals,
     injuries,
     activityLevel,
-    heartRate,
     responseToExercise,
-    hasConsent
   } = req.body
 
   try {
@@ -39,9 +37,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         goals,
         injuries,
         activityLevel,
-        heartRate,
         responseToExercise,
-        hasConsent,
       }),
     })
 
