@@ -25,7 +25,7 @@ export default function Home() {
 
         <meta
           property="og:image"
-          content="https://betaniapersonal.vercel.app/logo.png"
+          content="https://betaniapersonal.vercel.app/logo-fundo.png"
         />
         <meta
           property="og:description"
