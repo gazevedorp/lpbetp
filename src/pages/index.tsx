@@ -22,16 +22,23 @@ export default function Home() {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
         <link rel="shortcut icon" href="logo.svg"></link>
-
+        <meta property="og:url" content="https://betaniapersonal.vercel.app" />
         <meta
           property="og:image"
           content="https://betaniapersonal.vercel.app/logo-fundo.png"
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta
           property="og:description"
           content="Treinos feitos sob medida para você, com acompanhamentos focados em
             resultados, de maneira descomplicada e direta."
         />
+        <meta
+          property="og:image:alt"
+          content="Conquista, superação e liberdade."
+        />
+        <meta property="og:site_name" content="Betânia Vieira Personal" />
       </Head>
       <main className="overflow-y-scroll overflow-x-hidden h-screen w-screen scroll-smooth">
         <HeroSection />
