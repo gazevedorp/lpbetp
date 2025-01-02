@@ -7,6 +7,7 @@ interface EmailTemplateProps {
   goals: string;
   injuries: string;
   activityLevel: string;
+  trainingExperience: string;
   responseToExercise: string[]; // array com as opções marcadas
 }
 
@@ -18,6 +19,7 @@ export function EmailTemplate(props: EmailTemplateProps) {
     goals,
     injuries,
     activityLevel,
+    trainingExperience,
     responseToExercise,
   } = props;
 
@@ -85,6 +87,9 @@ export function EmailTemplate(props: EmailTemplateProps) {
           <p>
             <strong>Histórico de Lesões:</strong>{" "}
             {injuries || "Nenhum informado"}
+          </p>
+          <p>
+            <strong>Tempo de Treino:</strong> {trainingExperience}
           </p>
           <p>
             <strong>Nível de Atividade Física:</strong> {activityLevel}

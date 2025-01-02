@@ -4,13 +4,11 @@ import { motion } from "framer-motion";
 export default function Form() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     setSuccess(false);
-    setError(null);
 
     // Capturando os dados de cada campo
     const formData = new FormData(e.currentTarget);
@@ -21,6 +19,7 @@ export default function Form() {
       goals: formData.get("goals") as string,
       injuries: formData.get("injuries") as string,
       activityLevel: formData.get("activity-level") as string,
+      trainingExperience: formData.get("training-experience") as string,
       responseToExercise: formData.getAll("response-to-exercise"),
     };
 
@@ -39,8 +38,8 @@ export default function Form() {
       setTimeout(() => {
         window.location.href = "/";
       }, 2000);
-    } catch (err: any) {
-      setError(err.message || "Ocorreu um erro inesperado.");
+    } catch {
+      console.error("Erro ao enviar o formulário.");
     } finally {
       setLoading(false);
     }
@@ -51,13 +50,11 @@ export default function Form() {
       id="form"
       className="snap-start py-16 px-4 bg-[#1a1b1c] text-white"
     >
-      {/* Texto principal em 3xl */}
       <h2 className="text-xl font-light font-sora text-center max-w-3xl mx-auto leading-tight mb-8">
         Se você ainda não tem certeza de suas necessidades, preencha a anamnese
         e logo entraremos em contato com você.
       </h2>
 
-      {/* Container do formulário */}
       <div className="max-w-4xl mx-auto p-8 rounded-xl backdrop-blur-md shadow-xl bg-[#141414] text-white">
         <h3 className="text-xl font-bold text-center mb-6 font-sora">
           Formulário de Anamnese
@@ -69,7 +66,6 @@ export default function Form() {
         >
           {/* Coluna Esquerda */}
           <div className="space-y-6">
-            {/* Nome Completo */}
             <div>
               <label htmlFor="name" className="block font-semibold mb-1">
                 Nome Completo
@@ -85,8 +81,6 @@ export default function Form() {
                 required
               />
             </div>
-
-            {/* E-mail */}
             <div>
               <label htmlFor="email" className="block font-semibold mb-1">
                 E-mail
@@ -102,8 +96,6 @@ export default function Form() {
                 required
               />
             </div>
-
-            {/* Idade */}
             <div>
               <label htmlFor="age" className="block font-semibold mb-1">
                 Idade
@@ -123,7 +115,6 @@ export default function Form() {
 
           {/* Coluna Direita */}
           <div className="space-y-6">
-            {/* Objetivos */}
             <div>
               <label htmlFor="goals" className="block font-semibold mb-1">
                 Quais são seus objetivos?
@@ -139,8 +130,6 @@ export default function Form() {
                 required
               />
             </div>
-
-            {/* Histórico de Lesões */}
             <div>
               <label htmlFor="injuries" className="block font-semibold mb-1">
                 Histórico de Lesões (se houver)
@@ -157,9 +146,8 @@ export default function Form() {
             </div>
           </div>
 
-          {/* Linha Inteira: Nível de Atividade + Resposta ao Exercício */}
+          {/* Linha Inteira: Nível de Atividade + Resposta ao Exercício + Tempo de Treino */}
           <div className="md:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Nível de Atividade Física */}
             <div>
               <label
                 htmlFor="activity-level"
@@ -184,7 +172,28 @@ export default function Form() {
               </select>
             </div>
 
-            {/* Resposta ao Exercício (checkbox) */}
+            <div>
+              <label
+                htmlFor="training-experience"
+                className="block font-semibold mb-1"
+              >
+                Quanto tempo você treina?
+              </label>
+              <select
+                id="training-experience"
+                name="training-experience"
+                className="block w-full p-3 rounded-lg border border-gray-600
+                           bg-black text-white placeholder-gray-400
+                           focus:outline-none focus:ring-2 focus:ring-primary"
+                required
+              >
+                <option value="">Selecione o tempo</option>
+                <option value="iniciante">Iniciante: 0-12 meses</option>
+                <option value="intermediário">Intermediário: 1-2 anos</option>
+                <option value="avançado">Avançado: 3 anos ou +</option>
+              </select>
+            </div>
+
             <div>
               <label
                 htmlFor="response-to-exercise"
@@ -250,11 +259,6 @@ export default function Form() {
                 Formulário enviado com sucesso, obrigado!
               </p>
             )}
-            {/* {error && (
-              <p className="mt-4 text-red-500 font-semibold">
-                {error}
-              </p>
-            )} */}
           </div>
         </form>
       </div>
