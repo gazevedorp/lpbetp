@@ -64,7 +64,7 @@ export default function PlansCarousel() {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 6000,
     pauseOnHover: true,
     dotsClass: "slick-dots custom-dots", // <-- adicione isso
     responsive: [
