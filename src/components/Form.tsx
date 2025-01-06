@@ -14,7 +14,7 @@ export default function Form() {
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get("name") as string,
-      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
       age: formData.get("age") as string,
       goals: formData.get("goals") as string,
       injuries: formData.get("injuries") as string,
@@ -82,14 +82,14 @@ export default function Form() {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block font-semibold mb-1">
-                E-mail
+              <label htmlFor="phone" className="block font-semibold mb-1">
+                Telefone/Whatsapp
               </label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="seu@email.com"
+                type="phone"
+                id="phone"
+                name="phone"
+                placeholder="Ex: 169..."
                 className="block w-full p-3 rounded-lg border border-gray-600 
                            bg-black text-white placeholder-gray-400
                            focus:outline-none focus:ring-2 focus:ring-primary"

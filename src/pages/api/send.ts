@@ -4,9 +4,8 @@ import { Resend } from "resend";
 import { EmailTemplate } from "@/components/Emailtemplate";
 
 // Substitua pela sua API Key real
-const resend = new Resend("re_d1QJeaKD_Gh9ki6HD1hXLbKqF7mSArfLU");
+const resend = new Resend("re_5EBm3fgT_Mq6Uw56x6AN1EZmzxFPnCioz");
 
-// Função principal
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -15,10 +14,9 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed. Use POST." });
   }
 
-  // Extrair os dados do body
   const {
     name,
-    email,
+    phone,
     age,
     goals,
     injuries,
@@ -28,15 +26,17 @@ export default async function handler(
   } = req.body;
 
   try {
-    // Enviar email para o dono do site
+    // Assunto dinâmico, incluindo o nome e a data/hora para evitar agrupamento
+    const dynamicSubject = `Anamnese de ${name}`;
+
+    // Envia o e-mail de forma mais profissional
     const data = await resend.emails.send({
-      from: "Seu Site <software@innovaihub.com.br>",
-      to: ["betania.adrianavieira7@gmail.com"], // troque aqui para o e-mail real do dono
-      subject: "Nova Anamnese Recebida",
-      // Montamos o template React que receberá os dados e exibirá em um layout amigável
+      from: "Consultoria Profissional <mail@innovaihub.com.br>",
+      to: ["gabrieldma27@gmail.com"], // altere para o e-mail real de destino
+      subject: dynamicSubject,
       react: EmailTemplate({
         name,
-        email,
+        phone,
         age,
         goals,
         injuries,

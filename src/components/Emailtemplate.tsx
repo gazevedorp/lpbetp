@@ -2,7 +2,7 @@ import * as React from "react";
 
 interface EmailTemplateProps {
   name: string;
-  email: string;
+  phone: string;
   age: string;
   goals: string;
   injuries: string;
@@ -14,7 +14,7 @@ interface EmailTemplateProps {
 export function EmailTemplate(props: EmailTemplateProps) {
   const {
     name,
-    email,
+    phone,
     age,
     goals,
     injuries,
@@ -22,13 +22,6 @@ export function EmailTemplate(props: EmailTemplateProps) {
     trainingExperience,
     responseToExercise,
   } = props;
-
-  // Paleta de Cores
-  const backgroundColor = "#1a1b1c"; // Fundo principal
-  const containerColor = "#232425"; // Cor interna (slightly lighter/darker)
-  const textColor = "#ffffff";
-  const highlightColor = "#f9ab2d"; // Cor de destaque
-  const secondaryTextColor = "#999999";
 
   return (
     <html>
@@ -40,74 +33,256 @@ export function EmailTemplate(props: EmailTemplateProps) {
         style={{
           margin: 0,
           padding: 0,
-          backgroundColor: backgroundColor,
-          color: textColor,
+          backgroundColor: "#f7e6cb",
           fontFamily: "Arial, sans-serif",
+          color: "#232323",
         }}
       >
-        {/* Conteúdo Central */}
-        <div
+        {/* Container principal */}
+        <table
+          width="100%"
+          border={0}
+          cellPadding="0"
+          cellSpacing="0"
           style={{
-            maxWidth: "600px",
-            margin: "0 auto",
-            padding: "20px",
-            backgroundColor: containerColor,
-            borderRadius: "8px",
+            backgroundColor: "#f7e6cb",
+            margin: 0,
+            padding: 0,
           }}
         >
-          {/* Logo (ajuste width/height conforme desejar) */}
-          {/* <div style={{ textAlign: "center", marginBottom: "16px" }}>
-            <img src="/fundo.png" alt="Logo" style={{ height: "60px" }} />
-          </div> */}
+          <tr>
+            <td align="center" style={{ padding: "30px 15px" }}>
+              {/* Card central */}
+              <table
+                width="600"
+                border={0}
+                cellPadding="0"
+                cellSpacing="0"
+                style={{
+                  width: "100%",
+                  maxWidth: "600px",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                  backgroundColor: "#ffffff",
+                  overflow: "hidden",
+                }}
+              >
+                {/* Cabeçalho */}
+                <tr>
+                  <td
+                    style={{
+                      backgroundColor: "#232323",
+                      padding: "20px",
+                      textAlign: "center",
+                    }}
+                  >
+                    <h1
+                      style={{
+                        margin: 0,
+                        fontSize: "24px",
+                        color: "#f9ab2d",
+                      }}
+                    >
+                      Nova Anamnese Recebida
+                    </h1>
+                  </td>
+                </tr>
 
-          {/* Título principal */}
-          <h1
-            style={{
-              color: highlightColor,
-              marginBottom: "12px",
-              fontSize: "24px",
-            }}
-          >
-            Nova Anamnese Recebida
-          </h1>
+                {/* Conteúdo principal */}
+                <tr>
+                  <td style={{ padding: "20px 30px" }}>
+                    <h2
+                      style={{
+                        fontSize: "18px",
+                        marginBottom: "20px",
+                        color: "#232323",
+                        textAlign: "left",
+                      }}
+                    >
+                      Informações Principais
+                    </h2>
 
-          {/* Dados do formulário */}
-          <p>
-            <strong>Nome Completo:</strong> {name}
-          </p>
-          <p>
-            <strong>E-mail:</strong> {email}
-          </p>
-          <p>
-            <strong>Idade:</strong> {age}
-          </p>
-          <p>
-            <strong>Objetivos:</strong> {goals}
-          </p>
-          <p>
-            <strong>Histórico de Lesões:</strong>{" "}
-            {injuries || "Nenhum informado"}
-          </p>
-          <p>
-            <strong>Tempo de Treino:</strong> {trainingExperience}
-          </p>
-          <p>
-            <strong>Nível de Atividade Física:</strong> {activityLevel}
-          </p>
+                    <table
+                      width="100%"
+                      style={{
+                        borderCollapse: "collapse",
+                        marginBottom: "30px",
+                      }}
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            style={{
+                              fontWeight: "bold",
+                              color: "#f9ab2d",
+                              padding: "8px 0",
+                              width: "200px",
+                              verticalAlign: "top",
+                            }}
+                          >
+                            Nome Completo:
+                          </td>
+                          <td style={{ padding: "8px 0", color: "#232323" }}>
+                            {name}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style={{
+                              fontWeight: "bold",
+                              color: "#f9ab2d",
+                              padding: "8px 0",
+                              verticalAlign: "top",
+                            }}
+                          >
+                            Telefone:
+                          </td>
+                          <td style={{ padding: "8px 0", color: "#232323" }}>
+                            {phone}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style={{
+                              fontWeight: "bold",
+                              color: "#f9ab2d",
+                              padding: "8px 0",
+                              verticalAlign: "top",
+                            }}
+                          >
+                            Idade:
+                          </td>
+                          <td style={{ padding: "8px 0", color: "#232323" }}>
+                            {age}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style={{
+                              fontWeight: "bold",
+                              color: "#f9ab2d",
+                              padding: "8px 0",
+                              verticalAlign: "top",
+                            }}
+                          >
+                            Objetivos:
+                          </td>
+                          <td style={{ padding: "8px 0", color: "#232323" }}>
+                            {goals}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style={{
+                              fontWeight: "bold",
+                              color: "#f9ab2d",
+                              padding: "8px 0",
+                              verticalAlign: "top",
+                            }}
+                          >
+                            Histórico de Lesões:
+                          </td>
+                          <td style={{ padding: "8px 0", color: "#232323" }}>
+                            {injuries || "Nenhum informado"}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style={{
+                              fontWeight: "bold",
+                              color: "#f9ab2d",
+                              padding: "8px 0",
+                              verticalAlign: "top",
+                            }}
+                          >
+                            Tempo de Treino:
+                          </td>
+                          <td style={{ padding: "8px 0", color: "#232323" }}>
+                            {trainingExperience}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style={{
+                              fontWeight: "bold",
+                              color: "#f9ab2d",
+                              padding: "8px 0",
+                              verticalAlign: "top",
+                            }}
+                          >
+                            Nível de Atividade Física:
+                          </td>
+                          <td style={{ padding: "8px 0", color: "#232323" }}>
+                            {activityLevel}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style={{
+                              fontWeight: "bold",
+                              color: "#f9ab2d",
+                              padding: "8px 0",
+                              verticalAlign: "top",
+                            }}
+                          >
+                            Resposta ao Exercício:
+                          </td>
+                          <td style={{ padding: "8px 0", color: "#232323" }}>
+                            {responseToExercise && responseToExercise.length > 0
+                              ? responseToExercise.join(", ")
+                              : "Nenhuma opção marcada"}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-          <p>
-            <strong>Resposta ao Exercício:</strong>{" "}
-            {responseToExercise && responseToExercise.length > 0
-              ? responseToExercise.join(", ")
-              : "Nenhuma opção marcada"}
-          </p>
+                    <hr
+                      style={{
+                        border: "none",
+                        borderTop: "1px solid #f9ab2d",
+                        margin: "0 0 20px 0",
+                      }}
+                    />
 
-          {/* Rodapé */}
-          <hr style={{ margin: "24px 0", borderColor: "#555" }} />
-          <small style={{ color: secondaryTextColor }}>
-            E-mail gerado automaticamente pelo site de consultoria.
-          </small>
-        </div>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "#555555",
+                        margin: 0,
+                      }}
+                    >
+                      E-mail gerado automaticamente pelo site de consultoria.
+                      <br />
+                      Favor não responder diretamente a esta mensagem.
+                    </p>
+                  </td>
+                </tr>
+
+                {/* Rodapé */}
+                <tr>
+                  <td
+                    style={{
+                      backgroundColor: "#f9ab2d",
+                      textAlign: "center",
+                      padding: "15px",
+                    }}
+                  >
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: "12px",
+                        color: "#232323",
+                      }}
+                    >
+                     Innovai Hub © 2025 | Todos os direitos reservados
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
       </body>
     </html>
   );

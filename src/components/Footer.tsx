@@ -15,7 +15,7 @@ export default function Footer() {
         >
           Innovai Hub
         </a>{' '}
-        © 2024
+        © 2025
       </p>
     </footer>
   )
