@@ -32,7 +32,7 @@ export default async function handler(
     // Envia o e-mail de forma mais profissional
     const data = await resend.emails.send({
       from: "Consultoria Profissional <mail@innovaihub.com.br>",
-      to: ["gabrieldma27@gmail.com"], // altere para o e-mail real de destino
+      to: ["betania.adrianavieira7@gmail.com"], // altere para o e-mail real de destino
       subject: dynamicSubject,
       react: EmailTemplate({
         name,
