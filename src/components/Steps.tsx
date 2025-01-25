@@ -20,12 +20,18 @@ export default function Steps() {
     },
     {
       title: "3. Praticar",
-      description: "Agora é o momento de mergulhar de cabeça nos treinos e dar tudo de si.",
+      description:
+        "Agora é o momento de mergulhar de cabeça nos treinos e dar tudo de si.",
     },
     {
       title: "4. Corrigir",
       description:
         "Vídeos e feedbacks. Correção feita no WhatsApp exclusivo dos alunos da Consultoria.",
+    },
+    {
+      title: "5. Reavaliar",
+      description:
+        "Enviar novas fotos. Analisar tudo o que foi feito nos 2 meses de protocolo, colher feedbacks e traçar os novos objetivos para o próximo protocolo",
     },
   ];
 
@@ -46,7 +52,7 @@ export default function Steps() {
         </h2>
 
         {/* Grid responsiva com animações */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 col-start-auto col-end-auto">
           {steps.map((step, index) => (
             <div
               key={index}

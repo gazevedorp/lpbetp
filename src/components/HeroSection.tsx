@@ -28,7 +28,7 @@ export default function HeroSection() {
         {/* Imagem personal-logo no fundo, ocupando todo o container */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Image
-            src="/personal-logo-2.png"
+            src="/personal-logo-new-2.png"
             alt="Foto da Personal"
             className="sm:object-contain object-cover"
             fill
@@ -47,7 +47,7 @@ export default function HeroSection() {
             justify-center
             py-8
             text-center
-            bg-[rgb(0,0,0)]/50
+            bg-[rgb(0,0,0)]/60
           "
         >
           {/* Logo */}
@@ -89,7 +89,7 @@ export default function HeroSection() {
             </h2>
           </div>
 
-          <p className="text-sm w-[95%] sm:w-[60%] lg:text-base text-white mb-4 font-extralight leading-relaxed">
+          <p className="text-sm w-[95%] sm:w-[60%] sm:w-max-[200px] lg:text-base text-white mb-4 font-extralight leading-relaxed">
             Treinos feitos sob medida para você, com acompanhamentos focados em
             resultados, de maneira descomplicada e direta.
           </p>
