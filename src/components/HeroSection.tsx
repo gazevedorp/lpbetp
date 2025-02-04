@@ -35,7 +35,7 @@ export default function HeroSection() {
         {/* Imagem da personal no fundo */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Image
-            src="/personal.svg"
+            src="/personal.png"
             alt="Foto da Personal"
             fill
             priority
