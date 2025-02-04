@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function DescriptiveSection() {
-  const videoSrc = `https://player.vimeo.com/video/1042928972?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&nocache=${Date.now()}`;
+  const videoSrc = "https://player.vimeo.com/video/1042928972?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&dnt=1";
 
   return (
     <section

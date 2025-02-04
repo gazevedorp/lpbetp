@@ -1,0 +1,6 @@
+# robots.txt para Betânia Vieira Personal
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.betaniavieirapersonal.com.br/sitemap.xml
