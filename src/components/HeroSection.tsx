@@ -21,14 +21,14 @@ export default function HeroSection() {
         bg-cover
         relative
       "
-      style={{ backgroundImage: "url('/fundo-3.jpg')" }}
+      style={{ backgroundImage: "url('/fundo-hero.jpg')" }}
     >
       {/* Contêiner relativo para posicionar o personal-logo atrás do texto */}
       <div className="absolute w-full h-full flex flex-col items-center justify-center">
         {/* Imagem personal-logo no fundo, ocupando todo o container */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Image
-            src="/personal-logo-new-2.png"
+            src="/personal.png"
             alt="Foto da Personal"
             className="sm:object-contain object-cover"
             fill
@@ -40,19 +40,22 @@ export default function HeroSection() {
           className="
             z-10 
             w-[90%]
+            sm:w-[80%]
+            mt-16
             rounded-xl
             flex
             flex-col
             items-center
             justify-center
             py-8
+            sm:py-4
             text-center
-            bg-[rgb(0,0,0)]/60
+            bg-[rgb(0,0,0)]/40
           "
         >
           {/* Logo */}
           <Image
-            src="/logo-2.svg"
+            src="/logo-hero.svg"
             alt="Logo"
             width={220}
             height={20}

@@ -38,7 +38,7 @@ export default function Steps() {
   return (
     <section
       id="steps"
-      className="relative snap-start py-16 bg-[#1a1b1c] text-secondary overflow-hidden"
+      className="relative snap-start pt-16 pb-4 sm:pb-8 bg-[#1a1b1c] text-secondary overflow-hidden"
     >
       {/* Exemplo de background decorativo tecnológico (opcional) */}
       <div
@@ -52,11 +52,11 @@ export default function Steps() {
         </h2>
 
         {/* Grid responsiva com animações */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 col-start-auto col-end-auto">
+        <div className="flex w-full flex-wrap flex-row justify-center items-center">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative rounded-xl p-8 bg-[#262728]/80 backdrop-blur-md shadow-xl"
+              className="relative w-full h-[240px] m-4 sm:w-[30%] sm:max-w-[50%] rounded-xl p-8 bg-[#262728]/80 backdrop-blur-md shadow-xl"
             >
               {/* Número grande ao fundo (disruptivo) */}
               <span className="absolute top-0 right-4 text-[80px] text-primary font-extrabold opacity-20 pointer-events-none">

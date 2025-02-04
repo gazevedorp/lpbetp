@@ -94,7 +94,7 @@ export default function PlansCarousel() {
         bg-cover
         relative
       "
-      style={{ backgroundImage: "url('/fundo-8.jpg')" }}
+      style={{ backgroundImage: "url('/fundo-plans.jpg')" }}
     >
       <div className="container mx-auto px-4" style={{ overflow: "visible" }}>
         <h2 className="text-2xl sm:text-3xl font-bold font-sora mb-12 text-white">

@@ -1,15 +1,14 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
-import TrainerDetailsSection from "@/components/TrainerDetailsSection";
 import Plans from "@/components/Plans";
 import Steps from "@/components/Steps";
 import CTA from "@/components/CTA";
 import Form from "@/components/Form";
 import DescriptiveSection from "@/components/DescriptiveSection";
 import Head from "next/head";
-import VideoSection from "@/components/VideoSection";
 import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
+import { Analytics } from "@vercel/analytics/react"
 
 // Exemplo de página principal
 export default function Home() {
@@ -45,10 +44,6 @@ export default function Home() {
       </Head>
       <main className="overflow-y-scroll overflow-x-hidden h-screen w-screen scroll-smooth">
         <HeroSection />
-
-        {/* <TrainerDetailsSection />
-        <VideoSection /> */}
-
         <Steps />
         <CTA />
         <DescriptiveSection />
@@ -57,6 +52,7 @@ export default function Home() {
         <FinalCTA />
         <Footer />
       </main>
+      <Analytics />
     </>
   );
 }
