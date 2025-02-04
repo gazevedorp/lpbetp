@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Typewriter from "typewriter-effect";
+import dynamic from "next/dynamic";
+
+// Carrega o Typewriter apenas no cliente
+const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
 
 export default function HeroSection() {
   return (
@@ -17,12 +20,13 @@ export default function HeroSection() {
         relative
       "
     >
-      {/* Imagem de fundo otimizada */}
+      {/* Imagem de fundo otimizada com sizes */}
       <Image
         src="/fundo-hero.jpg"
         alt="Fundo hero com elementos visuais que inspiram transformação"
         fill
         priority
+        sizes="(max-width: 768px) 100vw, 100vw"
         className="object-cover"
       />
 
@@ -35,6 +39,7 @@ export default function HeroSection() {
             alt="Foto da Personal"
             fill
             priority
+            sizes="(max-width: 768px) 100vw, 100vw"
             className="object-cover sm:object-contain"
           />
         </div>
@@ -70,7 +75,7 @@ export default function HeroSection() {
           {/* Container que define a largura fixa em caracteres */}
           <div className="w-full mx-auto min-h-[5em] sm:min-h-0">
             <h1 className="text-2xl sm:text-3xl w-[95%] sm:w-full font-bold mb-2 text-white">
-              {/* O Typewriter é renderizado apenas visualmente */}
+              {/* Renderiza o Typewriter apenas visualmente */}
               <span aria-hidden="true">
                 <Typewriter
                   onInit={(typewriter) => {
