@@ -8,19 +8,14 @@ import DescriptiveSection from "@/components/DescriptiveSection";
 import Head from "next/head";
 import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
-// Exemplo de página principal
 export default function Home() {
   return (
     <>
       <Head>
         <title>Betânia Vieira Personal</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <link rel="shortcut icon" href="logo.svg"></link>
+        <link rel="shortcut icon" href="logo.svg" />
         <meta
           property="og:url"
           content="https://www.betaniavieirapersonal.com.br"
@@ -33,18 +28,23 @@ export default function Home() {
         <meta property="og:image:height" content="630" />
         <meta
           property="og:description"
-          content="Treinos feitos sob medida para você, com acompanhamentos focados em
-            resultados, de maneira descomplicada e direta."
+          content="Treinos feitos sob medida para você, com acompanhamentos focados em resultados, de maneira descomplicada e direta."
         />
         <meta
           property="og:image:alt"
           content="Conquista, superação e liberdade."
         />
         <meta property="og:site_name" content="Betânia Vieira Personal" />
+        <meta
+          name="description"
+          content="Treinos feitos sob medida para você, com acompanhamentos focados em resultados, de maneira descomplicada e direta."
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        {/*@ts-ignore*/}
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet" />
+        {/* The following font stylesheet link has been removed from here */}
+        {/* <link
+          href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap"
+          rel="stylesheet"
+        /> */}
       </Head>
       <main className="overflow-y-scroll overflow-x-hidden h-screen w-screen scroll-smooth">
         <HeroSection />

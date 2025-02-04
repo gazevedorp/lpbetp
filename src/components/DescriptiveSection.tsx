@@ -1,7 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 export default function DescriptiveSection() {
+  const videoSrc = `https://player.vimeo.com/video/1042928972?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&nocache=${Date.now()}`;
+
   return (
     <section
       id="descriptive"
@@ -51,7 +52,7 @@ export default function DescriptiveSection() {
         "
               >
                 <iframe
-                  src="https://player.vimeo.com/video/1042928972?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                  src={videoSrc}
                   title="Vídeo de Apresentação"
                   allowFullScreen
                   className="absolute top-0 left-0 w-full h-full rounded-lg"
