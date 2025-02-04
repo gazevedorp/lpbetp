@@ -43,7 +43,6 @@ export default function Steps() {
       {/* Exemplo de background decorativo tecnológico (opcional) */}
       <div
         className="absolute inset-0 -z-10 bg-no-repeat bg-center bg-cover opacity-5"
-        style={{ backgroundImage: 'url("/bg-steps-pattern.jpg")' }}
       />
 
       <div className="container mx-auto px-4">
