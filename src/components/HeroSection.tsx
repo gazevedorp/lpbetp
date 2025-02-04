@@ -1,5 +1,3 @@
-"use client"; // se estiver usando Next.js 13 dentro de 'app'
-
 import React from "react";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
@@ -9,36 +7,42 @@ export default function HeroSection() {
     <section
       className="
         snap-start
-        w-[100vw]
-        h-[100vh]
+        w-screen
+        h-screen
         flex
         items-center
         justify-center
         py-16
         px-4
-        bg-no-repeat
-        bg-center
-        bg-cover
         relative
       "
-      style={{ backgroundImage: "url('/fundo-hero.jpg')" }}
     >
-      {/* Contêiner relativo para posicionar o personal-logo atrás do texto */}
+      {/* Imagem de fundo otimizada */}
+      <Image
+        src="/fundo-hero.jpg"
+        alt="Fundo hero com elementos visuais que inspiram transformação"
+        fill
+        priority
+        className="object-cover"
+      />
+
+      {/* Container absoluto para posicionar a imagem da personal e o conteúdo */}
       <div className="absolute w-full h-full flex flex-col items-center justify-center">
-        {/* Imagem personal-logo no fundo, ocupando todo o container */}
+        {/* Imagem da personal no fundo */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Image
             src="/personal.png"
             alt="Foto da Personal"
-            className="sm:object-contain object-cover"
             fill
+            priority
+            className="object-cover sm:object-contain"
           />
         </div>
 
-        {/* Conteúdo (texto + CTA) na frente (z-index maior) */}
+        {/* Conteúdo principal (texto + CTA) */}
         <div
           className="
-            z-10 
+            z-10
             w-[90%]
             sm:w-[80%]
             mt-16
@@ -50,49 +54,49 @@ export default function HeroSection() {
             py-8
             sm:py-4
             text-center
-            bg-[rgb(0,0,0)]/40
+            bg-black/40
           "
         >
           {/* Logo */}
           <Image
             src="/logo-hero.svg"
-            alt="Logo"
+            alt="Logo da marca"
             width={220}
             height={20}
+            priority
             className="mb-2 -mt-32 -mr-12"
           />
 
-          {/* 1) Contêiner que define largura fixa em caracteres */}
-          <div
-            className="*/
-              w-full
-              mx-auto
-              min-h-[5em]
-              sm:min-h-0
-            "
-          >
-            <h2 className="text-2xl sm:text-3xl w-[95%] sm:w-full font-bold mb-2 text-white">
-              <Typewriter
-                onInit={(typewriter) => {
-                  typewriter
-                    // 2) Insira o HTML com a cor para 'liberdade'
-                    .typeString(
-                      'Conquista, superação e <span class="text-primary">liberdade</span>'
-                    )
-                    .start();
-                }}
-                options={{
-                  autoStart: true,
-                  loop: false,
-                  delay: 50,
-                  //@ts-expect-error type later
-                  escapeHTML: false, // permite renderizar HTML
-                }}
-              />
-            </h2>
+          {/* Container que define a largura fixa em caracteres */}
+          <div className="w-full mx-auto min-h-[5em] sm:min-h-0">
+            <h1 className="text-2xl sm:text-3xl w-[95%] sm:w-full font-bold mb-2 text-white">
+              {/* O Typewriter é renderizado apenas visualmente */}
+              <span aria-hidden="true">
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString(
+                        'Conquista, superação e <span class="text-primary">liberdade</span>'
+                      )
+                      .start();
+                  }}
+                  options={{
+                    autoStart: true,
+                    loop: false,
+                    delay: 50,
+                    //@ts-ignore
+                    escapeHTML: false,
+                  }}
+                />
+              </span>
+              {/* Texto estático para leitores de tela */}
+              <span className="sr-only">
+                Conquista, superação e liberdade
+              </span>
+            </h1>
           </div>
 
-          <p className="text-sm w-[95%] sm:w-[60%] sm:w-max-[200px] lg:text-base text-white mb-4 font-extralight leading-relaxed">
+          <p className="text-sm w-[95%] sm:w-[60%] lg:text-base text-white mb-4 font-extralight leading-relaxed">
             Treinos feitos sob medida para você, com acompanhamentos focados em
             resultados, de maneira descomplicada e direta.
           </p>

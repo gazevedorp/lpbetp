@@ -1,8 +1,13 @@
 import React from "react";
-//@ts-expect-error
-import Slider from "react-slick"; // Biblioteca para o carrossel
+import dynamic from "next/dynamic";
+import Image from "next/image";
+
+// Importar os estilos do react-slick. Recomenda-se que esses estilos fiquem em um arquivo global.
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+// Importação dinâmica para evitar problemas com SSR
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function PlansCarousel() {
   const plansData = [
@@ -66,7 +71,7 @@ export default function PlansCarousel() {
     autoplay: true,
     autoplaySpeed: 6000,
     pauseOnHover: true,
-    dotsClass: "slick-dots custom-dots", // <-- adicione isso
+    dotsClass: "slick-dots custom-dots",
     responsive: [
       {
         breakpoint: 1024,
@@ -83,9 +88,14 @@ export default function PlansCarousel() {
     ],
   };
 
+  // Inverter o array de forma imutável
+  const reversedPlansData = [...plansData].reverse();
+
   return (
     <section
       id="plans"
+      role="region"
+      aria-labelledby="plans-heading"
       className="
         py-16 snap-start text-center
         px-4
@@ -94,15 +104,26 @@ export default function PlansCarousel() {
         bg-cover
         relative
       "
-      style={{ backgroundImage: "url('/fundo-plans.jpg')" }}
     >
+      {/* Imagem de fundo otimizada com Next Image */}
+      <Image
+        src="/fundo-plans.jpg"
+        alt="Fundo com visual inspirador para os planos"
+        fill
+        priority
+        className="object-cover"
+      />
+
       <div className="container mx-auto px-4" style={{ overflow: "visible" }}>
-        <h2 className="text-2xl sm:text-3xl font-bold font-sora mb-12 text-white">
+        <h2
+          id="plans-heading"
+          className="text-2xl sm:text-3xl font-bold font-sora mb-12 text-white"
+        >
           Escolha o Seu Plano
         </h2>
 
         <Slider {...settings}>
-          {plansData.reverse().map((plan, index) => (
+          {reversedPlansData.map((plan, index) => (
             <div key={index} className="px-2">
               <div
                 className={`
@@ -111,8 +132,8 @@ export default function PlansCarousel() {
                   rounded-lg shadow-lg bg-black/70 text-white p-6
                 `}
               >
-                <div className="">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 rw">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4">
                     {plan.title}{" "}
                     {plan.extra && (
                       <span className="block text-sm text-primary mt-1">
@@ -121,21 +142,21 @@ export default function PlansCarousel() {
                     )}
                   </h3>
                 </div>
+
                 <div className="mb-4 space-y-2 text-white text-sm w-full">
                   <p>- {plan.duration}</p>
                   <p>- {plan.protocols}</p>
                   <p>- {plan.support}</p>
                 </div>
 
-                {/* Preço e preço promocional */}
-                <div className="w-full text-center ">
+                <div className="w-full text-center">
                   {plan.promoPrice && (
                     <>
                       <div className="text-lg font-bold text-test mb-2 line-through">
-                        {`${plan.price}`}
+                        {plan.price}
                       </div>
                       <div className="text-2xl font-bold text-primary mb-2">
-                        {`${plan.promoPrice}`}
+                        {plan.promoPrice}
                       </div>
                     </>
                   )}
@@ -144,7 +165,6 @@ export default function PlansCarousel() {
                   )}
                 </div>
 
-                {/* Botão que envia mensagem no WhatsApp */}
                 <a
                   href={`https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+participar+da+consultoria+com+o+${encodeURIComponent(
                     plan.title
@@ -153,6 +173,7 @@ export default function PlansCarousel() {
                   rel="noopener noreferrer"
                   className="inline-block w-full bg-transparent border border-primary text-primary py-3 px-6 rounded-lg font-semibold shadow-md 
                             hover:shadow-lg hover:bg-primary-dark transition-all duration-300 mt-4"
+                  aria-label={`Assine agora o ${plan.title} via WhatsApp`}
                 >
                   Assine Agora
                 </a>
