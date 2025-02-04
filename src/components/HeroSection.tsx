@@ -35,7 +35,7 @@ export default function HeroSection() {
         {/* Imagem da personal no fundo */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Image
-            src="/personal.png"
+            src="/personal.svg"
             alt="Foto da Personal"
             fill
             priority
@@ -70,6 +70,7 @@ export default function HeroSection() {
             height={20}
             priority
             className="mb-2 -mt-32 -mr-12"
+            quality={75}
           />
 
           {/* Container que define a largura fixa em caracteres */}
