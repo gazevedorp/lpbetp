@@ -111,7 +111,7 @@ export default function PlansCarousel() {
         alt="Fundo com visual inspirador para os planos"
         fill
         priority
-        className="object-cover"
+        className="object-cover z-[-1]"
       />
 
       <div className="container mx-auto px-4" style={{ overflow: "visible" }}>

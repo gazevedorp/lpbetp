@@ -1,26 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
 // Carrega o Typewriter apenas no cliente
 const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
 
-export default function HeroSection() {
+/* 
+  Props:
+  - onImagesLoaded: função opcional chamada quando as imagens (exceto o SVG) forem carregadas.
+*/
+interface HeroSectionProps {
+  onImagesLoaded?: () => void;
+}
+
+export default function HeroSection({ onImagesLoaded }: HeroSectionProps) {
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+  // Apenas as imagens de fundo e da personal serão contabilizadas (2 imagens)
+  const totalImages = 2;
+
+  useEffect(() => {
+    if (imagesLoaded === totalImages && onImagesLoaded) {
+      onImagesLoaded();
+    }
+  }, [imagesLoaded, totalImages, onImagesLoaded]);
+
+  const handleImageLoad = () => {
+    setImagesLoaded((prev) => prev + 1);
+  };
+
   return (
-    <section
-      className="
-        snap-start
-        w-screen
-        h-screen
-        flex
-        items-center
-        justify-center
-        py-16
-        px-4
-        relative
-      "
-    >
-      {/* Imagem de fundo otimizada com sizes */}
+    <section className="snap-start w-screen h-screen flex items-center justify-center py-16 px-4 relative">
+      {/* Imagem de fundo */}
       <Image
         src="/fundo-hero.jpg"
         alt="Fundo hero com elementos visuais que inspiram transformação"
@@ -28,11 +38,12 @@ export default function HeroSection() {
         priority
         sizes="(max-width: 768px) 100vw, 100vw"
         className="object-cover"
+        onLoadingComplete={handleImageLoad}
       />
 
       {/* Container absoluto para posicionar a imagem da personal e o conteúdo */}
       <div className="absolute w-full h-full flex flex-col items-center justify-center">
-        {/* Imagem da personal no fundo */}
+        {/* Imagem da personal */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Image
             src="/personal.png"
@@ -41,28 +52,13 @@ export default function HeroSection() {
             priority
             sizes="(max-width: 768px) 100vw, 100vw"
             className="object-cover sm:object-contain"
+            onLoadingComplete={handleImageLoad}
           />
         </div>
 
-        {/* Conteúdo principal (texto + CTA) */}
-        <div
-          className="
-            z-10
-            w-[90%]
-            sm:w-[80%]
-            mt-16
-            rounded-xl
-            flex
-            flex-col
-            items-center
-            justify-center
-            py-8
-            sm:py-4
-            text-center
-            bg-black/40
-          "
-        >
-          {/* Logo */}
+        {/* Conteúdo principal */}
+        <div className="z-10 w-[90%] sm:w-[80%] mt-16 rounded-xl flex flex-col items-center justify-center py-8 sm:py-4 text-center bg-black/40">
+          {/* Logo SVG – sem condicional de carregamento */}
           <Image
             src="/logo-hero.svg"
             alt="Logo da marca"
@@ -73,16 +69,15 @@ export default function HeroSection() {
             quality={75}
           />
 
-          {/* Container que define a largura fixa em caracteres */}
+          {/* Conteúdo com Typewriter */}
           <div className="w-full mx-auto min-h-[5em] sm:min-h-0">
             <h1 className="text-2xl sm:text-3xl w-[95%] sm:w-full font-bold mb-2 text-white">
-              {/* Renderiza o Typewriter apenas visualmente */}
               <span aria-hidden="true">
                 <Typewriter
                   onInit={(typewriter) => {
                     typewriter
                       .typeString(
-                        'Conquista, superação e <span class="text-primary">liberdade</span>'
+                        'Conquista, superação e <span class="text-primary">liberdade!</span>'
                       )
                       .start();
                   }}
@@ -95,7 +90,6 @@ export default function HeroSection() {
                   }}
                 />
               </span>
-              {/* Texto estático para leitores de tela */}
               <span className="sr-only">
                 Conquista, superação e liberdade
               </span>
@@ -109,17 +103,7 @@ export default function HeroSection() {
 
           <a
             href="#plans"
-            className="
-              inline-block
-              bg-primary
-              text-white
-              font-semibold
-              py-2
-              px-4
-              rounded-md
-              hover:opacity-90
-              transition-opacity
-            "
+            className="inline-block bg-primary text-white font-semibold py-2 px-4 rounded-md hover:opacity-90 transition-opacity"
           >
             Transforme-se agora
           </a>
