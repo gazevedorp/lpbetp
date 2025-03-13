@@ -25,7 +25,7 @@ export default function FinalCTA() {
 
           {/* Botão Atendimento Presencial */}
           <a
-            href="https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+atendimento+presencial."
+            href="https://api.whatsapp.com/send?phone=5516992902270&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+atendimento+presencial."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border border-white text-white py-3 px-6 rounded-lg shadow-lg font-semibold transition-all duration-300"

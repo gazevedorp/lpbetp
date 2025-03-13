@@ -17,7 +17,7 @@ export default function PlansCarousel() {
       protocols: "6 Protocolos de treino",
       support: "Suporte completo no WhatsApp exclusivo",
       price: "R$ 1.699,90",
-      promoPrice: "R$ 1.359,90",
+      promoPrice: "R$ 1.137,90",
       discount: "20% de desconto no Pix ou até 12x",
       extra: "A melhor de todas!",
       bestSeller: false,
@@ -29,7 +29,7 @@ export default function PlansCarousel() {
       protocols: "3 Protocolos de treino",
       support: "Suporte completo no WhatsApp exclusivo",
       price: "R$ 889,90",
-      promoPrice: "R$ 755,90",
+      promoPrice: "R$ 747,90",
       discount: "15% de desconto no Pix ou até 12x",
       extra: "Você ganha 1 mês de graça!",
       bestSeller: false,
@@ -41,7 +41,7 @@ export default function PlansCarousel() {
       protocols: "2 Protocolos de treino",
       support: "Suporte completo no WhatsApp exclusivo",
       price: "R$ 629,90",
-      promoPrice: "R$ 566,90",
+      promoPrice: "R$ 537,90",
       discount: "10% de desconto no Pix ou até 12x",
       extra: "(Mais Vendido)",
       bestSeller: true,
@@ -53,7 +53,7 @@ export default function PlansCarousel() {
       protocols: "1 Protocolo de treino",
       support: "Suporte completo no WhatsApp exclusivo",
       price: "R$ 349,90",
-      promoPrice: "R$ 314,90",
+      promoPrice: "R$ 297,90",
       discount: "",
       extra: "Simples mas eficiente!",
       bestSeller: false,
@@ -166,7 +166,7 @@ export default function PlansCarousel() {
                 </div>
 
                 <a
-                  href={`https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+participar+da+consultoria+com+o+${encodeURIComponent(
+                  href={`https://api.whatsapp.com/send?phone=5516992902270&text=Ol%C3%A1%2C+gostaria+de+participar+da+consultoria+com+o+${encodeURIComponent(
                     plan.title
                   )}`}
                   target="_blank"
