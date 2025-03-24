@@ -166,7 +166,7 @@ export default function PlansCarousel() {
                 </div>
 
                 <a
-                  href={`https://api.whatsapp.com/send?phone=553888321913&text=Ol%C3%A1%2C+gostaria+de+participar+da+consultoria+com+o+${encodeURIComponent(
+                  href={`https://api.whatsapp.com/send?phone=5516992902270&text=Ol%C3%A1%2C+gostaria+de+participar+da+consultoria+com+o+${encodeURIComponent(
                     plan.title
                   )}`}
                   target="_blank"
